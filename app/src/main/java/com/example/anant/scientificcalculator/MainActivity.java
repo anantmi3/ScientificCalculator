@@ -1,20 +1,18 @@
-package com.example.anant.scientificcalculator;
+    package com.example.anant.scientificcalculator;
 
-import android.databinding.DataBindingUtil;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import static java.lang.Math.*;
-import java.text.DecimalFormat;
-import com.example.anant.scientificcalculator.databinding.MainActivityBinding;
-//import android.content.DialogInterface;
-//import android.text.TextUtils;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+    import android.databinding.DataBindingUtil;
+    import android.os.Bundle;
+    import android.support.v7.app.AppCompatActivity;
+    import static java.lang.Math.*;
+    import java.text.DecimalFormat;
+    import com.example.anant.scientificcalculator.databinding.MainActivityBinding;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.EditText;
+    import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity {
+    public class MainActivity extends AppCompatActivity {
 
     private MainActivityBinding binding;
 
@@ -42,12 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
     private double valueOne = Double.NaN;
     private double valueTwo;
+    private double valueTemp;
 
     private DecimalFormat decimalFormat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.main_activity);
 
         decimalFormat = new DecimalFormat("#.##########");
 
@@ -318,29 +318,50 @@ public class MainActivity extends AppCompatActivity {
                 valueOne = this.valueOne / valueTwo;
             else if(CURRENT_ACTION == FACT)
             {
+                valueTemp = this.valueOne;
                 int i,valueThree=1;
-                for(i=(int) valueOne;i>0;i--) //type conversion
+
+                for(i=(int) valueTemp;i>0;i--) //type conversion
                 {
                     valueThree *= i;
                 }
                 valueOne = valueThree;
             }
-            else if(CURRENT_ACTION == POWER)
-                valueOne = Math.pow(valueOne,valueTwo);
-            else if(ADVANCE_ACTION == SQRT)
-                valueOne = Math.sqrt(valueOne);
-            else if(ADVANCE_ACTION == SIN)
-                valueOne = Math.sin(valueOne);
-            else if(ADVANCE_ACTION == COS)
-                valueOne = Math.cos(valueOne);
-            else if(ADVANCE_ACTION == TAN)
-                valueOne = Math.tan(valueOne);
-            else if(ADVANCE_ACTION == LOG)
-                valueOne = Math.log(valueOne);
-            else if(ADVANCE_ACTION == PIE)
-                valueOne = Math.PI;
-            else if(ADVANCE_ACTION == EXP)
-                valueOne = Math.E;
+            else if(CURRENT_ACTION == POWER) {
+                valueTemp = this.valueOne;
+                valueTemp = Math.pow(valueOne, valueTwo);
+                valueOne = valueTemp;
+            }
+            else if(ADVANCE_ACTION == SQRT) {
+                valueTemp = this.valueOne;
+                valueOne = Math.sqrt(valueTemp);
+            }
+            else if(ADVANCE_ACTION == SIN) {
+                valueTemp = this.valueOne;
+                valueOne = Math.sin(valueTemp);
+            }
+            else if(ADVANCE_ACTION == COS) {
+                valueTemp = this.valueOne;
+                valueOne = Math.cos(valueTemp);
+            }
+            else if(ADVANCE_ACTION == TAN) {
+                valueTemp = this.valueOne;
+                valueOne = Math.tan(valueTemp);
+            }
+            else if(ADVANCE_ACTION == LOG) {
+                valueTemp = this.valueOne;
+                valueOne = Math.log(valueTemp);
+            }
+            else if(ADVANCE_ACTION == PIE) {
+                valueTemp = this.valueOne;
+                valueTemp = Math.PI;
+                valueOne = valueTemp;
+            }
+            else if(ADVANCE_ACTION == EXP) {
+                valueTemp = this.valueOne;
+                valueTemp = Math.E;
+                valueOne = valueTemp;
+            }
         }
         else {
             try {
