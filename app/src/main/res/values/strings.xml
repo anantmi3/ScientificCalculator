@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Scientific Calculator</string>
+    <string name="buttonSine">SIN</string>
+    <string name="buttonCosine">COS</string>
+    <string name="buttonTangent">TAN</string>
+    <string name="buttonLog">LOG</string>
+    <string name="buttonSqrt">SQRT</string>
+    <string name="buttonLeftC">(</string>
+    <string name="buttonRightC">)</string>
+    <string name="buttonSeven">7</string>
+    <string name="buttonEight">8</string>
+    <string name="buttonNine">9</string>
+    <string name="buttonClear">ClEAR</string>
+    <string name="buttonFact">!</string>
+    <string name="buttonFour">4</string>
+    <string name="buttonFive">5</string>
+    <string name="buttonSix">6</string>
+    <string name="buttonMultiply">*</string>
+    <string name="buttonDIvide">/</string>
+    <string name="buttonPie">PIE</string>
+    <string name="buttonExp">EXP</string>
+    <string name="buttonOne">1</string>
+    <string name="buttonTwo">2</string>
+    <string name="buttonThree">3</string>
+    <string name="buttonAdd">+</string>
+    <string name="buttonSubtract">-</string>
+    <string name="buttonZero">0</string>
+    <string name="buttonDot">.</string>
+    <string name="buttonEqual">=</string>
+    <string name="buttonPow">^</string>
+</resources>
